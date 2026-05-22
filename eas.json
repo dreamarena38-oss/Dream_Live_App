@@ -18,6 +18,9 @@
     },
     "production": {
       "autoIncrement": true,
+      "ios": {
+        "resourceClass": "m-medium"
+      },
       "env": {
         "EXPO_PUBLIC_API_URL_WEB": "https://dream-live-backend-3.onrender.com/api",
         "EXPO_PUBLIC_API_URL_ANDROID": "https://dream-live-backend-3.onrender.com/api",
