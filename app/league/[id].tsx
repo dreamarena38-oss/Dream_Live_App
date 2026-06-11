@@ -18,6 +18,7 @@ interface Match {
 }
 
 import apiClient from '@/lib/api';
+import LoaderSpinner from '@/components/LoaderSpinner';
 
 export default function LeagueDetailsScreen() {
   const { id } = useLocalSearchParams();
@@ -78,9 +79,10 @@ export default function LeagueDetailsScreen() {
       >
         <View style={styles.matchesList}>
           {loading && matches.length === 0 ? (
-            <View style={styles.centerContainer}>
-              <Text style={styles.loadingText}>Loading matches...</Text>
-            </View>
+            <LoaderSpinner />
+            // <View style={styles.centerContainer}>
+            //  <Text style={styles.loadingText}>Loading matches...</Text>
+            // </View>
           ) : matches.length > 0 ? (
             matches.map((match) => {
               const matchId = match.id || match._id;

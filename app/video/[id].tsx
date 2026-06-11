@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import VideoPlayer from '@/components/VideoPlayer';
 import { Calendar, Eye, Tag, Play } from 'lucide-react-native';
 import apiClient from '@/lib/api';
+import LoaderSpinner from '@/components/LoaderSpinner';
 
 interface VideoDetails {
   id: string;
@@ -75,11 +76,12 @@ export default function VideoDetailsScreen() {
     return (
       <View style={styles.container}>
         <Header title="Video" showBackButton />
-        <View style={styles.loadingContainer}>
+        <LoaderSpinner msgText={loading ? 'Loading video...' : 'Video not found'} />
+        {/* <View style={styles.loadingContainer}>
           <Text style={styles.loadingText}>
             {loading ? 'Loading video...' : 'Video not found'}
           </Text>
-        </View>
+        </View> */}
       </View>
     );
   }

@@ -25,6 +25,7 @@ interface MatchDetails {
 }
 
 import apiClient from '@/lib/api';
+import LoaderSpinner from '@/components/LoaderSpinner';
 
 export default function MatchDetailsScreen() {
   const { id } = useLocalSearchParams();
@@ -71,11 +72,12 @@ export default function MatchDetailsScreen() {
     return (
       <View style={styles.container}>
         <Header title="Match Details" showBackButton />
-        <View style={styles.loadingContainer}>
+        <LoaderSpinner msgText={loading ? 'Loading match details...' : 'Match not found'} />
+        {/* <View style={styles.loadingContainer}>
           <Text style={styles.loadingText}>
             {loading ? 'Loading match details...' : 'Match not found'}
           </Text>
-        </View>
+        </View> */}
       </View>
     );
   }
