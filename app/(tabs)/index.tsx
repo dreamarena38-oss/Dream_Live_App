@@ -148,7 +148,7 @@ export default function HomeScreen() {
         }
       >
         {/* Connection Status */}
-        {connectionStatus === 'disconnected' && (
+        {/* {connectionStatus === 'disconnected' && (
           <View style={styles.connectionError}>
             <Text style={styles.connectionErrorText}>
               ⚠️ Unable to connect to the live service. Attempting to reconnect...
@@ -160,7 +160,7 @@ export default function HomeScreen() {
           <View style={styles.errorContainer}>
             <Text style={styles.errorText}>{error}</Text>
           </View>
-        )}
+        )} */}
 
         {/* What's New Section */}
         <View style={styles.section}>
