@@ -9,14 +9,16 @@ interface UpdateEvent {
   timestamp: number;
 }
 
+// Production backend (Railway)
+const PRODUCTION_API_URL = 'https://dreamliveapp-production.up.railway.app/api';
+
 // Get the base URL for Socket.IO (without /api)
 const getSocketUrl = () => {
-  const localUrl = 'http://localhost:3001/api';
-  const defaultUrl = process.env.EXPO_PUBLIC_API_URL || localUrl;
+  const defaultUrl = process.env.EXPO_PUBLIC_API_URL || PRODUCTION_API_URL;
 
   let apiUrl = defaultUrl;
   if (Platform.OS === 'web') {
-    apiUrl = process.env.EXPO_PUBLIC_API_URL_WEB || (process.env.NODE_ENV === 'development' ? 'http://localhost:3001/api' : defaultUrl);
+    apiUrl = process.env.EXPO_PUBLIC_API_URL_WEB || defaultUrl;
   } else if (Platform.OS === 'android') {
     apiUrl = process.env.EXPO_PUBLIC_API_URL_ANDROID || defaultUrl;
   } else {

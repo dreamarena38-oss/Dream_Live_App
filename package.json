@@ -19,6 +19,7 @@
     "ios:release-bundle": "npx expo export:embed --platform ios --dev false",
     "ios:setup": "npm run ios:prebuild && npm run ios:pods && npm run ios:xcode",
     "start:metro": "REACT_NATIVE_PACKAGER_HOSTNAME=$(ipconfig getifaddr en0 2>/dev/null || echo localhost) npx expo start --lan",
+    "ios:simulator": "npx expo run:ios",
     "ios:run-device": "npx expo run:ios --device",
     "ios:device": "npm run start:metro & sleep 3 && npx expo run:ios --device",
     "ios:build:production": "eas build --platform ios --profile production",

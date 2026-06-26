@@ -11,9 +11,9 @@
     "preview": {
       "distribution": "internal",
       "env": {
-        "EXPO_PUBLIC_API_URL_WEB": "https://dream-live-backend-3.onrender.com/api",
-        "EXPO_PUBLIC_API_URL_ANDROID": "https://dream-live-backend-3.onrender.com/api",
-        "EXPO_PUBLIC_API_URL_IOS": "https://dream-live-backend-3.onrender.com/api"
+        "EXPO_PUBLIC_API_URL_WEB": "https://dreamliveapp-production.up.railway.app/api",
+        "EXPO_PUBLIC_API_URL_ANDROID": "https://dreamliveapp-production.up.railway.app/api",
+        "EXPO_PUBLIC_API_URL_IOS": "https://dreamliveapp-production.up.railway.app/api"
       }
     },
     "production": {
@@ -22,9 +22,9 @@
         "resourceClass": "m-medium"
       },
       "env": {
-        "EXPO_PUBLIC_API_URL_WEB": "https://dream-live-backend-3.onrender.com/api",
-        "EXPO_PUBLIC_API_URL_ANDROID": "https://dream-live-backend-3.onrender.com/api",
-        "EXPO_PUBLIC_API_URL_IOS": "https://dream-live-backend-3.onrender.com/api"
+        "EXPO_PUBLIC_API_URL_WEB": "https://dreamliveapp-production.up.railway.app/api",
+        "EXPO_PUBLIC_API_URL_ANDROID": "https://dreamliveapp-production.up.railway.app/api",
+        "EXPO_PUBLIC_API_URL_IOS": "https://dreamliveapp-production.up.railway.app/api"
       }
     }
   },
