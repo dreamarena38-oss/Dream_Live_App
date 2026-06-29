@@ -4,12 +4,12 @@
     "slug": "dream-live",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/icon.jpg",
     "scheme": "dreamlivetv",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/images/splash.jpg",
       "resizeMode": "contain",
       "backgroundColor": "#6B46C1"
     },
@@ -29,7 +29,7 @@
     "android": {
       "versionCode": 2,
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/icon.png",
+        "foregroundImage": "./assets/images/icon.jpg",
         "backgroundColor": "#6B46C1"
       },
       "permissions": [
@@ -54,12 +54,12 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash.png",
+          "image": "./assets/images/splash.jpg",
           "resizeMode": "contain",
           "backgroundColor": "#6B46C1",
           "imageWidth": 280,
           "dark": {
-            "image": "./assets/images/splash.png",
+            "image": "./assets/images/splash.jpg",
             "backgroundColor": "#4C1D95"
           }
         }
