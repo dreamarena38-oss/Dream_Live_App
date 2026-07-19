@@ -1,6 +1,6 @@
 workflows:
   android-release:
-    name: Dream Live TV Android Release
+    name: Dream Live App Android Release
 
     max_build_duration: 60
 
