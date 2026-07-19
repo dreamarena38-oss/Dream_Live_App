@@ -1,6 +1,6 @@
 workflows:
   android-apk:
-    name: Android APK
+    name: Dream Live TV Android APK
 
     max_build_duration: 60
 
@@ -12,11 +12,15 @@ workflows:
         script: |
           npm install
 
-      - name: Expo prebuild
+      - name: Install Expo CLI
+        script: |
+          npm install -g expo-cli
+
+      - name: Generate Android project
         script: |
           npx expo prebuild --platform android --clean
 
-      - name: Build APK
+      - name: Build Release APK
         script: |
           cd android
           ./gradlew assembleRelease
