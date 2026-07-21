@@ -4,6 +4,7 @@ import http from 'http';
 import compression from 'compression';
 import { Server } from 'socket.io';
 import dotenv from 'dotenv';
+import path from 'path';
 import connectDB from './config/db';
 import routes from './routes';
 import { seedAdmin } from './utils/seed';
@@ -12,6 +13,7 @@ dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
+
 const io = new Server(server, {
     cors: {
         origin: "*",
@@ -40,6 +42,15 @@ app.use((req, res, next) => {
 // API Routes
 app.use('/api', routes);
 
+// Serve frontend web build (Expo web export output)
+app.use(express.static(path.join(__dirname, '../../dist')));
+
+app.get('*', (req, res) => {
+    if (!req.path.startsWith('/api')) {
+        res.sendFile(path.join(__dirname, '../../dist/index.html'));
+    }
+});
+
 // Error handling
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
     console.error(err.stack);
@@ -53,13 +64,10 @@ const startServer = async () => {
         console.log('🏁 Starting Dream Live Backend...');
         console.log(`🌍 Environment: ${process.env.NODE_ENV || 'not set'}`);
         console.log(`🔌 Port: ${PORT}`);
-
         console.log('🔄 Step 1: Connecting to Database...');
         await connectDB();
-
         console.log('🔄 Step 2: Running Admin Seeder...');
         await seedAdmin();
-
         console.log('🔄 Step 3: Starting HTTP Server...');
         server.listen(PORT, '::', () => {
             console.log(`🚀 Dream Live Backend v2 Running on port ${PORT}`);
