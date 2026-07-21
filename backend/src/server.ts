@@ -69,7 +69,7 @@ const startServer = async () => {
         console.log('🔄 Step 2: Running Admin Seeder...');
         await seedAdmin();
         console.log('🔄 Step 3: Starting HTTP Server...');
-        server.listen(PORT, '::', () => {
+        server.listen(PORT, '0.0.0.0', () => {
             console.log(`🚀 Dream Live Backend v2 Running on port ${PORT}`);
             console.log(`📡 Real-time Socket.IO enabled`);
         });
